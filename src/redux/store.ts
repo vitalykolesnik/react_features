@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { counter } from "redux/counter";
+import { CounterReduser } from "redux/counterReduser";
 
-const appReduser = combineReducers({ counter });
+const combinedRedusers = combineReducers({ counter: CounterReduser });
 
 export const store = configureStore({
-  reducer: appReduser,
+  reducer: combinedRedusers,
 });
+
+export type AppDispatch = typeof store.dispatch;
