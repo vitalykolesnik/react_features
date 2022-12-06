@@ -31,7 +31,10 @@ export const Title: FC = () => {
           }}
         />
       ) : (
-        <div className="block py-4" onClick={() => setIsEdit(true)}>
+        <div
+          className="block py-4 hover:bg-slate-500 duration-300"
+          onClick={() => setIsEdit(true)}
+        >
           {counterTitle}
         </div>
       )}

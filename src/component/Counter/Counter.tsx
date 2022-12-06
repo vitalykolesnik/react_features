@@ -25,41 +25,36 @@ export const Counter: FC = () => {
 
   const onDecrementAsync = async () => await dispatch(decrementAsync());
 
-  const isPressed = (e: any) => {
-    const prev = e.currentTarget.class;
-    prev.push("animate-pulse");
-  };
-
   return (
     <>
+      <div className="container text-center mx-auto bg-slate-100"></div>
       <Title />
+      <button className="p-2 mb-10 border-2 border-white rounded-xl transition ease-in-out shadow-md text-slate-100 bg-pink-800 hover:bg-pink-600 hover:scale-110 hover:shadow-xl shadow-gray-800 hover:shadow-gray-600 duration-400">
+        Save Changes
+      </button>
       <div className="static mt-4 text-slate-100">
-        <div className="flex justify-center text-md">
+        <div className="flex flex-col sm:flex-row justify-center text-md divide-y-2 sm:divide-y-0 sm:divide-x-2">
           <button
-            className="p-4 bg-slate-700 rounded-l-xl transition ease-in-out delay-50  active:bg-indigo-500  duration-500"
+            className="p-2 shrink bg-slate-700 sm:rounded-l-xl transition delay-50 hover:bg-indigo-500 duration-300  "
             onClick={onDecrementAsync}
-            onMouseDown={isPressed}
           >
             Delay Decrement
           </button>
           <button
-            className="p-4 bg-slate-700 transition ease-in-out delay-50  active:bg-indigo-500 duration-500"
+            className="p-2 shrink bg-slate-700  transition  delay-50   hover:bg-indigo-500 duration-300"
             onClick={onDecrement}
-            onMouseDown={isPressed}
           >
             Decrement
           </button>
           <button
-            className="p-4 bg-slate-700 transition ease-in-out delay-50  active:bg-indigo-500 duration-500 "
+            className="p-2 shrink bg-slate-700  transition  delay-50   hover:bg-indigo-500 duration-300 "
             onClick={onIncrement}
-            onMouseDown={isPressed}
           >
             Increment
           </button>
           <button
-            className="p-4 bg-slate-700 rounded-r-xl transition active: ease-in-out delay-50  active:bg-indigo-500 duration-500"
+            className="p-2 shrink bg-slate-700 sm:rounded-r-xl transition  delay-50  hover:bg-indigo-500 duration-300"
             onClick={onIncrementAsync}
-            onMouseDown={isPressed}
           >
             Delay Increment
           </button>
