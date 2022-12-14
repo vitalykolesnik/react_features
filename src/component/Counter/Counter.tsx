@@ -29,7 +29,7 @@ export const Counter: FC = () => {
     <>
       <div className="container text-center mx-auto bg-slate-100"></div>
       <Title />
-      <button className="p-2 mb-10 border-2 border-white rounded-xl transition ease-in-out shadow-md text-slate-100 bg-pink-800 hover:bg-pink-600 hover:scale-110 hover:shadow-xl shadow-gray-800 hover:shadow-gray-600 duration-400">
+      <button className="p-2 my-6 border-2 border-white rounded-xl transition ease-in-out shadow-md text-slate-100 bg-pink-800 hover:bg-pink-600 hover:scale-110 hover:shadow-xl shadow-gray-800 hover:shadow-gray-600 duration-400">
         Save Changes
       </button>
       <div className="static mt-4 text-slate-100">

@@ -22,7 +22,10 @@ export const Cameras: FC<PropsType> = ({ setId }) => {
   return (
     <>
       <p className="px-2 text-xl text-left ">Devices: </p>
-      <select className="p-2 w-full" onChange={onOpenDevice}>
+      <select
+        className="px-2 w-full border-2 border-gray-600 rounded-lg"
+        onChange={onOpenDevice}
+      >
         {deviceList}
       </select>
     </>
