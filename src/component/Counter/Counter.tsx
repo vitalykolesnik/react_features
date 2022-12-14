@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   increment,
@@ -11,7 +11,7 @@ import { selectValue } from "redux/counterSelector";
 import { AppDispatch } from "redux/store";
 import { Title } from "component/Counter/Title/Title";
 
-export const Counter: FC = () => {
+export const Counter: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const counterValue = useSelector((state: CounterStateType) =>
     selectValue(state)
@@ -33,9 +33,9 @@ export const Counter: FC = () => {
         Save Changes
       </button>
       <div className="static mt-4 text-slate-100">
-        <div className="flex flex-col sm:flex-row justify-center text-md divide-y-2 sm:divide-y-0 sm:divide-x-2">
+        <div className="flex flex-col md:flex-row justify-center text-md divide-y-2 md:divide-y-0 md:divide-x-2">
           <button
-            className="p-2 shrink bg-slate-700 sm:rounded-l-xl transition delay-50 hover:bg-indigo-500 duration-300  "
+            className="p-2 shrink bg-slate-700 md:rounded-l-xl transition delay-50 hover:bg-indigo-500 duration-300  "
             onClick={onDecrementAsync}
           >
             Delay Decrement
@@ -53,7 +53,7 @@ export const Counter: FC = () => {
             Increment
           </button>
           <button
-            className="p-2 shrink bg-slate-700 sm:rounded-r-xl transition  delay-50  hover:bg-indigo-500 duration-300"
+            className="p-2 shrink bg-slate-700 md:rounded-r-xl transition  delay-50  hover:bg-indigo-500 duration-300"
             onClick={onIncrementAsync}
           >
             Delay Increment

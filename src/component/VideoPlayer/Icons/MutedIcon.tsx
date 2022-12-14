@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React from "react";
 
-export const MutedIcon: FC = () => {
+export const MutedIcon: React.FC = () => {
   return (
     <svg
       className="w-6 h-6"

@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "redux/store";
 import { CounterStateType, setTitle } from "redux/counterReduser";
 import { selectTitle } from "redux/counterSelector";
 
-export const Title: FC = () => {
-  const [isEdit, setIsEdit] = useState(false);
+export const Title: React.FC = () => {
+  const [isEdit, setIsEdit] = React.useState(false);
 
   const counterTitle = useSelector((state: CounterStateType) =>
     selectTitle(state)

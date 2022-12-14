@@ -1,13 +1,13 @@
+import React from "react";
 import { placeholderApi } from "api/api";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PostType } from "component/Posts/Post";
 
-export const EditPost = () => {
+export const EditPost: React.FC = () => {
   const { id } = useParams();
-  const [post, setPost] = useState<PostType | null>(null);
+  const [post, setPost] = React.useState<PostType | null>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     placeholderApi.getPost(Number(id)).then((res) => {
       setPost(res);
     });

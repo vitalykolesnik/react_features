@@ -1,11 +1,11 @@
+import React from "react";
 import { useDevices } from "hooks/useDevices";
-import { FC } from "react";
 
 type PropsType = {
   setId: (id: string) => void;
 };
 
-export const Cameras: FC<PropsType> = ({ setId }) => {
+export const Cameras: React.FC<PropsType> = ({ setId }) => {
   const { devices } = useDevices("videoinput");
 
   const onOpenDevice = (e: React.ChangeEvent<HTMLSelectElement>) => {

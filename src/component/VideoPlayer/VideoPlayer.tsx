@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React from "react";
 import { useVideoPlayer } from "hooks/useVideoPlayer";
 import { PlayIcon } from "component/VideoPlayer/Icons/PlayIcon";
 import { PauseIcon } from "component/VideoPlayer/Icons/PauseIcon";
@@ -9,8 +9,8 @@ type PropsType = {
   source: any;
 };
 
-export const VideoPlayer: FC<PropsType> = ({ source }) => {
-  const videoElement = useRef(null);
+export const VideoPlayer: React.FC<PropsType> = React.memo(({ source }) => {
+  const videoRef = React.useRef(null);
   const {
     state,
     togglePlay,
@@ -18,14 +18,14 @@ export const VideoPlayer: FC<PropsType> = ({ source }) => {
     handleVideoProgress,
     handleVideoSpeed,
     toggleMute,
-  } = useVideoPlayer(videoElement);
+  } = useVideoPlayer(videoRef);
 
   return (
     <>
       <div className="flex flex-col relative m-2 cursor-pointer shadow-lg shadow-black aspect-video rounded-xl ">
         <video
           src={source}
-          ref={videoElement}
+          ref={videoRef}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
           className="h-auto w-auto rounded-xl "
@@ -73,4 +73,4 @@ export const VideoPlayer: FC<PropsType> = ({ source }) => {
       </div>
     </>
   );
-};
+});
